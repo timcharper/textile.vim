@@ -25,8 +25,12 @@ setlocal wrap
 setlocal lbr
 
 function! TextileRender(lines)
+  if (system('which ruby') == "")
+    throw "Could not find ruby!"
+  end
+
   let text = join(a:lines, "\n")
-  let html = system("ruby -e \"require 'rubygems'; require 'redcloth'; puts(RedCloth.new(\\$stdin.read).to_html(:textile))\"", text)
+  let html = system("ruby -e \"def e(msg); puts msg; exit 1; end; begin; require 'rubygems'; rescue LoadError; e('rubygems not found'); end; begin; require 'redcloth'; rescue LoadError; e('RedCloth gem not installed.  Run this from the terminal: sudo gem install RedCloth'); end; puts(RedCloth.new(\\$stdin.read).to_html(:textile))\"", text)
   return split("<html><head><title>" . bufname("%") . "</title><body>\n" . html . "\n</body></html>", "\n")
 endfunction
 
