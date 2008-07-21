@@ -23,15 +23,15 @@ h2. Commands
 :TextilePreview     - Render the current buffer to a temp file, and open it in
                       your web browser (OSX only)
 
-  <Leader>tp
+                      <Leader>tp
 
 :TextileRenderTab   - ... to a new tab
 
-  <Leader>tr
+                      <Leader>tr
 
 :TextileRenderFile  - ... to a file
 
-  <Leader>tf
+                      <Leader>tf
 
 <Leader> is \ by default, so <Leader>tp == \tp
 
