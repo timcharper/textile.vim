@@ -1,17 +1,26 @@
-noremap  \tp :call TextilePreview()<CR>
+" textile.vim
+" Language:		Textile
+" Contributors:
+"   Syntax by 
+"   - Aaron Bieber (blog.aaronbieber.com) 
+"   - Dominic Mitchell (happygiraffe.net)
+"
+"   Plugin by Tim Harper (tim.theenchanter.com)
+" 
+" Info:			$Id: ruby.vim,v 1.39 2007/05/06 16:38:40 tpope Exp $
+" URL:			http://vim-ruby.rubyforge.org
+" Anon CVS:		See above site
+" Release Coordinator:  Doug Kearns <dougkearns@gmail.com>
+" ----------------------------------------------------------------------------
+"
+" Syntax works on all OS's, but the textile preview command only works on OS
+" X right now.
+" 
+" Requires ruby and the RedCloth gem
+"
+" Changelog
+" 0.1
+" - Initial Release
+" --------------------------------------------------------------------------
 
-function! TextileRender(lines)
-  let text = join(a:lines, "\n")
-  return split(system("ruby \"require 'rubygems'; require 'redcloth'; puts(RedCloth.new($stdin.read).to_html(:textile))\"", text), "\n")
-endfunction
-
-function! TextileRenderToFile(lines, filename)
-  return writefile(TextileRender(getbufline(bufname("%"), 1, '$')), a:filename)
-endfunction
-
-function! TextilePreview()
-  let filename = "/tmp/textile-preview.html"
-  call TextileRenderToFile(getbufline(bufname("%"), 1, '$'), filename)
-  call system("open -a Safari ". filename)
-endfunction
-
+au BufRead,BufNewFile *.textile setf textile
