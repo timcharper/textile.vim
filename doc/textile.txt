@@ -1,0 +1,50 @@
+*textile.txt*              Textile for Vim       Last Change: July 21 2008
+
+===============================================================================
+REQUIREMENTS                                             *textile-requirements*
+
+- ruby - http://ruby-lang.org/ 
+- RedCloth - http://whytheluckystiff.net/ruby/redcloth/
+
+Files with the extension *.textile will auto-detected.  If editing a new file,
+or otherwise, run ":setf textile" to enable textile commands.
+
+
+==============================================================================
+CHANGELOG                                                  *textile-changelog*
+
+0.1     - Initial Release
+
+==============================================================================
+COMMANDS                                                    *textile-commands*
+
+h2. Commands
+
+:TextilePreview     - Render the current buffer to a temp file, and open it in
+                      your web browser (OSX only)
+
+  <Leader>tp
+
+:TextileRenderTab   - ... to a new tab
+
+  <Leader>tr
+
+:TextileRenderFile  - ... to a file
+
+  <Leader>tf
+
+<Leader> is \ by default, so <Leader>tp == \tp
+
+==============================================================================
+CREDITS                                                      *textile-credits* 
+
+Syntax Highlighting:
+
+- "Aaron Bieber":http://blog.aaronbieber.com/ 
+- "Dominic Mitchell":http://happygiraffe.net/
+
+Plugin:
+
+- "Tim Harper":http://tim.theenchanter.com/
+
+vim:tw=78:noet:wrap:ts=2:expandtab:ft=help:norl:
