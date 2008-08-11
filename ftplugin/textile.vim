@@ -36,7 +36,7 @@ endfunction
 
 function! TextileRenderBufferToFile()
   let filename = input("Filename:", substitute(bufname("%"), "textile$", "html", ""), "file")
-  call TextileRenderToFile(getbufline(bufname("%"), 1, '$'), filename)
+  call TextileRenderFile(getbufline(bufname("%"), 1, '$'), filename)
   echo "Rendered to '" . filename . "'"
 endfunction
 
