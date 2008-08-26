@@ -9,6 +9,8 @@
 "   Modified by Aaron Bieber, May 2007.
 "   blog.aaronbieber.com
 "
+"   Modified by Tim Harper, July 2008 - current
+"   tim.theenchanter.com
 " @(#) $Id$
 
 if version < 600

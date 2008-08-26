@@ -1,4 +1,4 @@
-*textile.txt*              Textile for Vim       Last Change: July 21 2008
+*textile.txt*              Textile for Vim       Last Change: August 26, 2008
 
 ===============================================================================
 REQUIREMENTS                                             *textile-requirements*
@@ -13,6 +13,12 @@ or otherwise, run ":setf textile" to enable textile commands.
 ==============================================================================
 CHANGELOG                                                  *textile-changelog*
 
+
+0.2     - Added multiple colors for headers, and alternating colors for list
+          items
+        - Fixed error in the vim script for TextileRenderBufferToFile
+        - Changed shortcut keys from \tp to \rp (render preview instead of
+          textile preview, since it's file-type specific anyways)
 0.1     - Initial Release
 
 ==============================================================================
@@ -38,13 +44,9 @@ h2. Commands
 ==============================================================================
 CREDITS                                                      *textile-credits* 
 
-Syntax Highlighting:
-
-- "Aaron Bieber":http://blog.aaronbieber.com/ 
-- "Dominic Mitchell":http://happygiraffe.net/
-
-Plugin:
-
-- "Tim Harper":http://tim.theenchanter.com/
+- "Dominic Mitchell":http://happygiraffe.net/: initial syntax highlighting
+- "Aaron Bieber":http://blog.aaronbieber.com/: improved syntax highlighting 
+- "Tim Harper":http://tim.theenchanter.com/  : improved syntax highlighting,
+                                                plugin
 
 vim:tw=78:noet:wrap:ts=2:expandtab:ft=help:norl:
