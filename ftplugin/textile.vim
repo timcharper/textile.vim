@@ -19,11 +19,13 @@ function! TextileRender(lines)
 
   let text = join(a:lines, "\n")
   let html = system("ruby -e \"def e(msg); puts msg; exit 1; end; begin; require 'rubygems'; rescue LoadError; e('rubygems not found'); end; begin; require 'redcloth'; rescue LoadError; e('RedCloth gem not installed.  Run this from the terminal: sudo gem install RedCloth'); end; puts(RedCloth.new(\\$stdin.read).to_html(:textile))\"", text)
-  return split("<html><head><title>" . bufname("%") . "</title><body>\n" . html . "\n</body></html>", "\n")
+  return html
 endfunction
 
 function! TextileRenderFile(lines, filename)
-  return writefile(TextileRender(getbufline(bufname("%"), 1, '$')), a:filename)
+  let html = TextileRender(getbufline(bufname("%"), 1, '$'))
+  let html = "<html><head><title>" . bufname("%") . "</title><body>\n" . html . "\n</body></html>"
+  return writefile(split(html, "\n"), a:filename)
 endfunction
 
 function! TextileRenderBufferToPreview()
@@ -41,9 +43,9 @@ function! TextileRenderBufferToFile()
 endfunction
 
 function! TextileRenderBufferToTab()
-  let html_lines = TextileRender(getbufline(bufname("%"), 1, '$'))
+  let html = TextileRender(getbufline(bufname("%"), 1, '$'))
   tabnew
-  call append("^", html_lines)
+  call append("^", split(html, "\n"))
   set syntax=html
 endfunction
 
