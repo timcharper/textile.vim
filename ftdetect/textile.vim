@@ -2,4 +2,7 @@
 "
 " Tim Harper (tim.theenchanter.com)
 
-au BufRead,BufNewFile *.textile setf textile
+" Force filetype to be textile even if already set
+" This will override the system ftplugin/changelog 
+" set on some distros
+au BufRead,BufNewFile *.textile set filetype=textile
