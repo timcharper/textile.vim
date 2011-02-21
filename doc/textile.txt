@@ -4,7 +4,7 @@
 REQUIREMENTS                                             *textile-requirements*
 
 - ruby - http://ruby-lang.org/ (seperate executable, not compiled in)
-- RedCloth - http://whytheluckystiff.net/ruby/redcloth/
+- RedCloth - http://redcloth.org/
 
 Files with the extension *.textile will auto-detected.  If editing a new file,
 or otherwise, run ":setf textile" to enable textile commands.
