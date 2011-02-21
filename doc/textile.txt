@@ -1,6 +1,6 @@
 *textile.txt*              Textile for Vim       Last Change: November 3, 2008
 
-===============================================================================
+==============================================================================
 REQUIREMENTS                                             *textile-requirements*
 
 - ruby - http://ruby-lang.org/ (seperate executable, not compiled in)
@@ -24,8 +24,6 @@ CHANGELOG                                                  *textile-changelog*
 ==============================================================================
 COMMANDS                                                    *textile-commands*
 
-h2. Commands
-
 :TextilePreview     - Render the current buffer to a temp file, and open it in
                       your web browser (OSX only)
 
@@ -40,6 +38,22 @@ h2. Commands
                       <Leader>rf
 
 <Leader> is \ by default, so <Leader>rp == \rp
+
+==============================================================================
+CONFIG                                                        *textile-config*
+
+MAC OS X:
+
+  Optional:
+    set g:TextileBrowser="Google Chrome"   - Open preview in "Google Chrome"
+                                             rather than Safari (optional)
+
+Other:
+
+  Mandatory:
+    set g:TextileOS="Linux"
+    set g:TextileBrowser="/path/to/browser_bin"
+
 
 ==============================================================================
 CREDITS                                                      *textile-credits* 
