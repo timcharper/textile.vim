@@ -31,9 +31,17 @@ endfunction
 function! TextileRenderBufferToPreview()
   let filename = "/tmp/textile-preview.html"
   call TextileRenderFile(getbufline(bufname("%"), 1, '$'), filename)
-
-  " Modify this line to make it compatible on other platforms
-  call system("open -a Safari ". filename)
+  " Verify if browser was set
+  if !exists("g:TextileBrowser")
+    let g:TextileBrowser='Safari'
+  endif
+  " call configured browser according OS
+  if !exists("g:TextileOS") || g:TextileOS == 'mac'
+    call system("open -a ".g:TextileBrowser." ".filename)
+  else
+    echo g:TextileBrowser." ".filename
+    call system(g:TextileBrowser." ".filename)
+  endif
 endfunction
 
 function! TextileRenderBufferToFile()
