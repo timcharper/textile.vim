@@ -37,7 +37,7 @@ function! TextileRenderBufferToPreview()
   endif
   " call configured browser according OS
   if !exists("g:TextileOS") || g:TextileOS == 'mac'
-    call system("open -a ".g:TextileBrowser." ".filename)
+    call system("open -a \"".g:TextileBrowser."\" ".filename)
   else
     echo g:TextileBrowser." ".filename
     call system(g:TextileBrowser." ".filename)
