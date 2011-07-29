@@ -4,10 +4,12 @@
 
 command! -nargs=0 TextileRenderFile call TextileRenderBufferToFile()
 command! -nargs=0 TextileRenderTab call TextileRenderBufferToTab()
+command! -nargs=0 TextileRenderSplit call TextileRenderBufferToSplit()
 command! -nargs=0 TextilePreview call TextileRenderBufferToPreview()
 noremap <buffer> <Leader>rp :TextilePreview<CR>
 noremap <buffer> <Leader>rf :TextileRenderFile<CR>
 noremap <buffer> <Leader>rt :TextileRenderTab<CR>
+noremap <buffer> <Leader>rs :TextileRenderSplit<CR>
 setlocal ignorecase
 setlocal wrap
 setlocal lbr
@@ -58,3 +60,10 @@ function! TextileRenderBufferToTab()
   set nomodified
 endfunction
 
+function! TextileRenderBufferToSplit()
+  let html = TextileRender(getbufline(bufname("%"), 1, '$'))
+  new
+  call append("^", split(html, "\n"))
+  set syntax=html
+  set nomodified
+endfunction
