@@ -60,10 +60,10 @@ Other:
 
 
 ==============================================================================
-CREDITS                                                      *textile-credits* 
+CREDITS                                                      *textile-credits*
 
 - "Dominic Mitchell":http://happygiraffe.net/: initial syntax highlighting
-- "Aaron Bieber":http://blog.aaronbieber.com/: improved syntax highlighting 
+- "Aaron Bieber":http://blog.aaronbieber.com/: improved syntax highlighting
 - "Tim Harper":http://tim.theenchanter.com/  : improved syntax highlighting,
                                                 plugin
 
