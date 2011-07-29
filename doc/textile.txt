@@ -33,6 +33,10 @@ COMMANDS                                                    *textile-commands*
 
                       <Leader>rt
 
+:TextileRenderSplit - ... to a new split
+
+                      <Leader>rs
+
 :TextileRenderFile  - ... to a file
 
                       <Leader>rf
