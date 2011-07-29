@@ -55,5 +55,6 @@ function! TextileRenderBufferToTab()
   tabnew
   call append("^", split(html, "\n"))
   set syntax=html
+  set nomodified
 endfunction
 
