@@ -40,12 +40,15 @@ syn match txtCode        /@[^@]\+@/
 syn match txtHeader      /^h1\(([^)]*)\|{[^}]*}\|\[[^]]*\]\|[<>=()]\)*\. .\+/
 syn match txtHeader2     /^h2\(([^)]*)\|{[^}]*}\|\[[^]]*\]\|[<>=()]\)*\. .\+/
 syn match txtHeader3     /^h[3-6]\(([^)]*)\|{[^}]*}\|\[[^]]*\]\|[<>=()]\)*\..\+/
-syn match txtBlockquote  /^bq\(([^)]*)\|{[^}]*}\|\[[^]]*\]\|[<>=()]\)*\./
 syn match txtFootnoteDef /^fn[0-9]\+\(([^)]*)\|{[^}]*}\|\[[^]]*\]\|[<>=()]\)*\./
 syn match txtListBullet  /\v^\*+ /
 syn match txtListBullet2  /\v^(\*\*)+ /
 syn match txtListNumber  /\v^#+ /
 syn match txtListNumber2  /\v^(##)+ /
+
+syn region txtCodeblock start="^bc\(([^)]*)\|{[^}]*}\|\[[^]]*\]\|[<>=()]\)*\. " end="^$"
+syn region txtBlockquote start="^bq\(([^)]*)\|{[^}]*}\|\[[^]]*\]\|[<>=()]\)*\. " end="^$"
+syn region txtParagraph start="^bq\(([^)]*)\|{[^}]*}\|\[[^]]*\]\|[<>=()]\)*\. " end="^$"
 
 syn cluster txtBlockElement contains=txtHeader,txtBlockElement,txtFootnoteDef,txtListBullet,txtListNumber
 
@@ -72,6 +75,7 @@ if version >= 508 || !exists("did_txt_syn_inits")
     HiLink txtHeader2 Question
     HiLink txtHeader3 Statement
     HiLink txtBlockquote Comment
+    HiLink txtCodeblock Identifier
     HiLink txtListBullet Operator
     HiLink txtListBullet2 Constant
     HiLink txtListNumber Operator
