@@ -37,11 +37,11 @@ syn match txtFootnoteRef /\[[0-9]\+]/
 syn match txtCode        /@[^@]\+@/
 
 " Block elements.
-syn match txtHeader      /^h1\. .\+/
-syn match txtHeader2     /^h2\. .\+/
-syn match txtHeader3     /^h[3-6]\..\+/
-syn match txtBlockquote  /^bq\./
-syn match txtFootnoteDef /^fn[0-9]\+\./
+syn match txtHeader      /^h1\(([^)]*)\|{[^}]*}\|\[[^]]*\]\|[<>=()]\)*\. .\+/
+syn match txtHeader2     /^h2\(([^)]*)\|{[^}]*}\|\[[^]]*\]\|[<>=()]\)*\. .\+/
+syn match txtHeader3     /^h[3-6]\(([^)]*)\|{[^}]*}\|\[[^]]*\]\|[<>=()]\)*\..\+/
+syn match txtBlockquote  /^bq\(([^)]*)\|{[^}]*}\|\[[^]]*\]\|[<>=()]\)*\./
+syn match txtFootnoteDef /^fn[0-9]\+\(([^)]*)\|{[^}]*}\|\[[^]]*\]\|[<>=()]\)*\./
 syn match txtListBullet  /\v^\*+ /
 syn match txtListBullet2  /\v^(\*\*)+ /
 syn match txtListNumber  /\v^#+ /
