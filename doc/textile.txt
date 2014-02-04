@@ -33,6 +33,10 @@ COMMANDS                                                    *textile-commands*
 
                       <Leader>rt
 
+:TextileRenderSplit - ... to a new split
+
+                      <Leader>rs
+
 :TextileRenderFile  - ... to a file
 
                       <Leader>rf
@@ -56,10 +60,10 @@ Other:
 
 
 ==============================================================================
-CREDITS                                                      *textile-credits* 
+CREDITS                                                      *textile-credits*
 
 - "Dominic Mitchell":http://happygiraffe.net/: initial syntax highlighting
-- "Aaron Bieber":http://blog.aaronbieber.com/: improved syntax highlighting 
+- "Aaron Bieber":http://blog.aaronbieber.com/: improved syntax highlighting
 - "Tim Harper":http://tim.theenchanter.com/  : improved syntax highlighting,
                                                 plugin
 
